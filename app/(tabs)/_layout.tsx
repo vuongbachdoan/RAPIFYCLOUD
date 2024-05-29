@@ -5,8 +5,9 @@ import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { Platform } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import {
+  createDrawerNavigator,
+} from "@react-navigation/drawer";
 import TabTwoScreen from "@/app/(tabs)/explore";
 import HomeScreen from "@/app/(tabs)";
 

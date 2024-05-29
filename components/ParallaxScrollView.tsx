@@ -79,8 +79,6 @@ export default function ParallaxScrollView({
         </Animated.View>
         <ThemedView style={styles.content}>
           {children}
-          {children}
-          {children}
         </ThemedView>
       </Animated.ScrollView>
     </ThemedView>
@@ -89,6 +87,7 @@ export default function ParallaxScrollView({
 
 const styles = StyleSheet.create({
   container: {
+    fontFamily: 'AmazonEmber,Helvetica Neue,Helvetica,Arial,sans-serif',
     flex: 1,
   },
   headerContentWrapper: {

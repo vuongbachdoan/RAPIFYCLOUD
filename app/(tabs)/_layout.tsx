@@ -51,7 +51,9 @@ export default function TabLayout(): React.ReactNode {
     </Tabs>
   ) : (
     <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={HomeScreen}/>
+      <Drawer.Screen name="Home" component={HomeScreen} options={({route}) => ({
+        drawerIcon: () => <Ionicons name="home-outline"/>
+      })}/>
       <Drawer.Screen name="Explore" component={TabTwoScreen} />
     </Drawer.Navigator>
   );

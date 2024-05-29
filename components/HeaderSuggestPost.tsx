@@ -5,8 +5,8 @@ import { ThemedButton } from "./ThemedButton";
 import { APP_FONTS } from "../constants/Fonts";
 
 const CONTENT : {title: string, description: string} = {
-  title: 'The standard Lorem Ipsum passage, used since the 1500s',
-  description: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+  title: 'Building your machine learning skills from zero',
+  description: 'Navigating the tech landscape without a traditional computer science background has been a challenging, yet rewarding, journey. Approximately two years ago, I was preparing to take the AWS Certified Cloud Practitioner exam. In this blog, I’ll share my non-traditional journey into a career in tech and how this path led me to explore the world of machine learning (ML), including advice and resources for those wanting to make the leap.'
 }
 
 export type ThemedViewProps = ViewProps & {

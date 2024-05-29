@@ -9,7 +9,7 @@ export const APP_FONTS : {
         fontWeight: 700
     },
     textMedium: {
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: 400
     }
 }

@@ -1,5 +1,12 @@
 import React from "react";
-import { Image, StyleSheet, View, TextInput, Text } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  View,
+  TextInput,
+  Text,
+  Platform,
+} from "react-native";
 
 import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
@@ -38,12 +45,16 @@ export default function HomeScreen() {
         />
       </ThemedView>
 
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Newest posts</ThemedText>
-      </ThemedView>
-
-      <View style={{ flexDirection: "row" }}>
-        <View style={{ width: 240 }}>
+      <View
+        style={{
+          flexDirection:
+            (Platform.OS === "web" || window.innerWidth >= 750)
+              ? "row"
+              : "column",
+        }}
+      >
+        <View style={{ width: 240, marginBottom: 30 }}>
+          <ThemedText type="subtitle">Newest posts</ThemedText>
           <Collapsible title="Categories">
             <View style={styles.checkboxContainer}>
               <CheckBox
@@ -117,14 +128,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   checkboxContainer: {
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
+    flexDirection: "column",
+    justifyContent: "flex-start",
     rowGap: 5,
     marginBottom: 20,
   },
-  checkbox: {
-  },
+  checkbox: {},
   label: {
     fontFamily: "AmazonEmber,Helvetica Neue,Helvetica,Arial,sans-serif",
-  }
+  },
 });

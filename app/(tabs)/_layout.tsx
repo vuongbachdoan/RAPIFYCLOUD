@@ -10,6 +10,7 @@ import {
 } from "@react-navigation/drawer";
 import TabTwoScreen from "@/app/(tabs)/explore";
 import HomeScreen from "@/app/(tabs)";
+import { Ionicons } from "@expo/vector-icons";
 
 const Drawer = createDrawerNavigator();
 
@@ -50,7 +51,7 @@ export default function TabLayout(): React.ReactNode {
     </Tabs>
   ) : (
     <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="Home" component={HomeScreen}/>
       <Drawer.Screen name="Explore" component={TabTwoScreen} />
     </Drawer.Navigator>
   );

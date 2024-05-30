@@ -46,7 +46,6 @@ export function HeaderSuggestPost({
         >
           {CONTENT.title}
         </Text>
-        {/* <Text style={{...APP_FONTS.textMedium, color: Colors[colorScheme ?? "light"].text }}>{CONTENT.description}</Text> */}
 
         <View style={styles.buttonView}>
           <ThemedButton title="Read More" type="rounded" />

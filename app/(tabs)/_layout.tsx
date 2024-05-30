@@ -14,7 +14,7 @@ const Drawer = createDrawerNavigator();
 export default function TabLayout(): React.ReactNode {
   const colorScheme = useColorScheme();
 
-  return Platform.OS === "web" ? (
+  return Platform.OS !== "web" ? (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "dark"].icon,
@@ -55,17 +55,23 @@ export default function TabLayout(): React.ReactNode {
       initialRouteName="Home"
       screenOptions={{
         overlayColor: Colors["light"].dark50,
+        drawerStyle: {
+          backgroundColor: Colors["dark"].blueNavy,
+        },
         headerStyle: {
           backgroundColor: Colors["light"].blueNavy,
           borderWidth: 0
         },
+        drawerLabelStyle: {
+          color:  Colors["dark"].text
+        }
       }}
     >
       <Drawer.Screen
         name="Home"
         component={HomeScreen}
         options={({ route }) => ({
-          headerTintColor: Colors["light"].text,
+          headerTintColor: Colors["dark"].text,
           drawerIcon: () => (
             <Image
               source={require("@/assets/images/home.png")}

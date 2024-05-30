@@ -15,21 +15,21 @@ const dark50 = '#131A2250';
 
 export const Colors = {
   light: {
-    text: '#DDD',
-    background: '#fff',
+    text: '#131A22',
+    background: '#FFF',
     tint: tintColorLight,
-    icon: '#FFF',
+    icon: '#131A22',
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
     link: linkColor,
     hint: hintLight,
     orange: orange,
     blueNavy: blueNavy,
-    dark: dark,
+    dark: '#131A22',
     dark50: dark50
   },
   dark: {
-    text: '#ECEDEE',
+    text: '#DDD',
     background: '#151718',
     tint: tintColorDark,
     icon: '#DDD',
@@ -39,7 +39,7 @@ export const Colors = {
     hint: hintDark,
     orange: orange,
     blueNavy: blueNavy,
-    dark: dark,
+    dark: '#131A22',
     dark50: dark50
   },
 };

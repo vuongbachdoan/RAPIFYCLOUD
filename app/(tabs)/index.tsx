@@ -19,7 +19,7 @@ import { Collapsible } from "../../components/Collapsible";
 import { CheckBox } from "rn-inkpad";
 import { Colors } from "../../constants/Colors";
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}: any) {
   const colorScheme = useColorScheme();
   const [text, onChangeText] = React.useState("");
 
@@ -99,10 +99,10 @@ export default function HomeScreen() {
         </View>
 
         <ThemedView style={styles.wrapperPreviewList}>
-          <PreviewCard />
-          <PreviewCard />
-          <PreviewCard />
-          <PreviewCard />
+          <PreviewCard navigation={navigation}/>
+          <PreviewCard navigation={navigation}/>
+          <PreviewCard navigation={navigation}/>
+          <PreviewCard navigation={navigation}/>
         </ThemedView>
       </View>
     </ParallaxScrollView>
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     fontFamily: "AmazonEmber,Helvetica Neue,Helvetica,Arial,sans-serif",
-    rowGap: 15,
+    rowGap: 30,
     marginBottom: 8,
   },
   reactLogo: {

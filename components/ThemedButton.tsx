@@ -1,5 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
-import { StyleSheet, ButtonProps, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, ButtonProps, TouchableOpacity, Text, useColorScheme } from "react-native";
+import { Colors } from "../constants/Colors";
 
 export type ThemedButtonProps = ButtonProps & {
   type?: "default" | "rounded";
@@ -11,11 +12,12 @@ export function ThemedButton({
   onPress,
   ...rest
 }: ThemedButtonProps) {
+  const colorScheme = useColorScheme();
   const buttonStyle = type === "rounded" ? styles.rounded : styles.default;
 
   return (
-    <TouchableOpacity style={buttonStyle} onPress={onPress}>
-      <Text style={styles.textStyle}>{title}</Text>
+    <TouchableOpacity style={{...buttonStyle, backgroundColor: Colors[colorScheme ?? "light"].orange}} onPress={onPress}>
+      <Text style={{...styles.textStyle, color: Colors["light"].dark}}>{title}</Text>
     </TouchableOpacity>
   );
 }
@@ -23,15 +25,12 @@ export function ThemedButton({
 const styles = StyleSheet.create({
   default: {
     padding: 10,
-    backgroundColor: '#1B1B1B',
   },
   rounded: {
     padding: 10,
     borderRadius: 12,
-    backgroundColor: '#1B1B1B'
   },
   textStyle: {
-    color: '#FFF',
     fontSize: 14,
     fontWeight: '500',
   }

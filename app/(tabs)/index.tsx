@@ -6,6 +6,7 @@ import {
   TextInput,
   Text,
   Platform,
+  useColorScheme,
 } from "react-native";
 
 import { HelloWave } from "@/components/HelloWave";
@@ -16,9 +17,11 @@ import { HeaderSuggestPost } from "@/components/HeaderSuggestPost";
 import { PreviewCard } from "../../components/PreviewCard";
 import { Collapsible } from "../../components/Collapsible";
 import { CheckBox } from "rn-inkpad";
+import { Colors } from "../../constants/Colors";
 
 export default function HomeScreen() {
-  const [text, onChangeText] = React.useState("Useless Text");
+  const colorScheme = useColorScheme();
+  const [text, onChangeText] = React.useState("");
 
   return (
     <ParallaxScrollView
@@ -39,16 +42,17 @@ export default function HomeScreen() {
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Filters (tags)</ThemedText>
         <TextInput
-          style={styles.input}
+          style={{...styles.input, color: Colors[colorScheme ?? "light"].tint, borderColor: Colors[colorScheme ?? "light"].text}}
           onChangeText={onChangeText}
           value={text}
+          placeholder="Search"
         />
       </ThemedView>
 
       <View
         style={{
           flexDirection:
-            (Platform.OS === "web" || window.innerWidth >= 750)
+            Platform.OS === "web" || window.innerWidth >= 750
               ? "row"
               : "column",
         }}
@@ -60,22 +64,34 @@ export default function HomeScreen() {
               <CheckBox
                 // value={isSelected}
                 // onValueChange={setSelection}
+                iconColor={Colors[colorScheme ?? "light"].orange}
                 style={styles.checkbox}
-                textStyle={styles.label}
+                textStyle={{
+                  ...styles.label,
+                  color: Colors[colorScheme ?? "light"].text,
+                }}
                 title="Compute"
               />
               <CheckBox
                 // value={isSelected}
                 // onValueChange={setSelection}
+                iconColor={Colors[colorScheme ?? "light"].orange}
                 style={styles.checkbox}
-                textStyle={styles.label}
+                textStyle={{
+                  ...styles.label,
+                  color: Colors[colorScheme ?? "light"].text,
+                }}
                 title="Developer Tools"
               />
               <CheckBox
                 // value={isSelected}
                 // onValueChange={setSelection}
+                iconColor={Colors[colorScheme ?? "light"].orange}
                 style={styles.checkbox}
-                textStyle={styles.label}
+                textStyle={{
+                  ...styles.label,
+                  color: Colors[colorScheme ?? "light"].text,
+                }}
                 title="Generative AI"
               />
             </View>

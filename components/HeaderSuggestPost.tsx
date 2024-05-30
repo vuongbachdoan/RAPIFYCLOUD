@@ -1,8 +1,9 @@
-import { Button, StyleSheet, Text, View, type ViewProps } from "react-native";
+import { Button, StyleSheet, Text, View, useColorScheme, type ViewProps } from "react-native";
 
 import { useThemeColor } from "@/hooks/useThemeColor";
 import { ThemedButton } from "./ThemedButton";
 import { APP_FONTS } from "../constants/Fonts";
+import { Colors } from "../constants/Colors";
 
 const CONTENT : {title: string, description: string} = {
   title: 'Building your machine learning skills from zero',
@@ -20,6 +21,7 @@ export function HeaderSuggestPost({
   darkColor,
   ...otherProps
 }: ThemedViewProps) {
+  const colorScheme = useColorScheme();
   const backgroundColor = useThemeColor(
     { light: lightColor, dark: darkColor },
     "background"
@@ -28,8 +30,8 @@ export function HeaderSuggestPost({
   return (
     <View style={[{ backgroundColor }, style]} {...otherProps}>
       <View style={styles.contentView}>
-        <Text style={APP_FONTS.title}>{CONTENT.title}</Text>
-        <Text style={APP_FONTS.textMedium}>{CONTENT.description}</Text>
+        <Text style={{...APP_FONTS.title, color: Colors[colorScheme ?? "light"].tint}}>{CONTENT.title}</Text>
+        <Text style={{...APP_FONTS.textMedium, color: Colors[colorScheme ?? "light"].text }}>{CONTENT.description}</Text>
       </View>
       <View style={styles.buttonView}>
         <ThemedButton title="Read More" type="rounded" />
